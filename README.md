@@ -9,6 +9,23 @@ Simply get an API Token from [your Account](https://exaroton.com/account/) and y
 [![License: MIT](https://img.shields.io/badge/License-MIT-red)](https://gitlab.com/ColinShark/exaroton/-/blob/master/LICENSE)
 [![Gitmoji: 💻🔥](https://img.shields.io/badge/Gitmoji-%F0%9F%92%BB%F0%9F%94%A5-yellow)](https://github.com/carloscuesta/gitmoji#readme)
 
+## Installation
+
+Exaroton requires Python 3.6 or newer.
+
+```sh
+python3 -m pip install -U Exaroton
+```
+
+A Virtual Environment is recommended to not mess with system installs.
+This module has minimal requirements (`requests`), but you can never be safe enough.
+
+```sh
+python3 -m venv venv
+source ./venv/bin/activate
+pip install exaroton
+```
+
 ## Example Usage
 
 Currently all methods are (in my opinion) well documented and properly typehinted.
