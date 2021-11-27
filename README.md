@@ -1,20 +1,20 @@
-# Exaroton
+# exaroton
 
-A Python Wrapper for the [Exaroton API](https://developers.exaroton.com/)
+A Python Wrapper for the [exaroton API](https://developers.exaroton.com/)
 
 Simply get an API Token from [your Account](https://exaroton.com/account/) and you're good to go.
 
 [![Python: 3.6+](https://img.shields.io/badge/Python-3.6%2B-blue)](https://www.python.org/downloads)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-red)](https://gitlab.com/ColinShark/exaroton/-/blob/master/LICENSE)
-[![Gitmoji: 💻🔥](https://img.shields.io/badge/Gitmoji-%F0%9F%92%BB%F0%9F%94%A5-yellow)](https://github.com/carloscuesta/gitmoji#readme)
+<!-- [![Gitmoji: 💻🔥](https://img.shields.io/badge/Gitmoji-%F0%9F%92%BB%F0%9F%94%A5-yellow)](https://github.com/carloscuesta/gitmoji#readme) -->
 
 ## Installation
 
-Exaroton requires Python 3.6 or newer.
+exaroton requires Python 3.6 or newer.
 
 ```sh
-python3 -m pip install -U Exaroton
+python3 -m pip install -U exaroton
 ```
 
 A Virtual Environment is recommended to not mess with system installs.
@@ -29,12 +29,12 @@ pip install exaroton
 ## Example Usage
 
 Currently all methods are (in my opinion) well documented and properly typehinted.
-If you see something wrong, don't hestitate to [create an Issue](https://github.com/ColinShark/Exaroton/issues/new).
+If you see something wrong, don't hestitate to [create an Issue](https://github.com/ColinShark/exaroton/issues/new).
 
 I may create a full list of all available methods, or even utilize readthedocs.org
 
 ```python
-# Import Exaroton and set our token
+# Import exaroton and set our token
 >>> from exaroton import Exaroton
 >>> exa = Exaroton("API_TOKEN")
 
@@ -85,4 +85,4 @@ servers ID, too.
 
 ## The boring stuff
 
-Licensed under [MIT](https://github.com/ColinShark/Exaroton/blob/master/LICENSE)
+Licensed under [MIT](https://github.com/ColinShark/exaroton/blob/master/LICENSE)
