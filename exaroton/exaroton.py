@@ -151,7 +151,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servsers/{id}/stop")  # ["data"]
+        _data = self._make_request(f"servsers/{id}/restart")  # ["data"]
         return _data
 
     def command(self, id: str, command: str) -> str:
@@ -165,7 +165,7 @@ class Exaroton:
             ``str``: "Hello, world!"
         """
         _data = self._make_request(
-            f"servers/{id}/stop", "post", json={"command": command}
+            f"servers/{id}/command", "post", json={"command": command}
         )["data"]
         return _data
 
