@@ -127,7 +127,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/start")  # ["data"]
+        _data = self._make_request(f"servers/{id}/start")
         return _data
 
     def stop(self, id: str) -> str:
@@ -139,7 +139,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/stop")  # ["data"]
+        _data = self._make_request(f"servers/{id}/stop")
         return _data
 
     def restart(self, id: str) -> str:
@@ -151,7 +151,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/restart")  # ["data"]
+        _data = self._make_request(f"servers/{id}/restart")
         return _data
 
     def command(self, id: str, command: str) -> str:
