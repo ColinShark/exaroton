@@ -4,14 +4,14 @@ A Python Wrapper for the [exaroton API](https://developers.exaroton.com/)
 
 Simply get an API Token from [your Account](https://exaroton.com/account/) and you're good to go.
 
-[![Python: 3.6+](https://img.shields.io/badge/Python-3.6%2B-blue)](https://www.python.org/downloads)
+[![Python: 3.7+](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-red)](https://gitlab.com/ColinShark/exaroton/-/blob/master/LICENSE)
 <!-- [![Gitmoji: 💻🔥](https://img.shields.io/badge/Gitmoji-%F0%9F%92%BB%F0%9F%94%A5-yellow)](https://github.com/carloscuesta/gitmoji#readme) -->
 
 ## Installation
 
-exaroton requires Python 3.6 or newer.
+exaroton requires Python 3.7 or newer.
 
 ```sh
 python3 -m pip install -U exaroton
