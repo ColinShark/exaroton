@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "exaroton"
+version = "0.0.3-2"
+description = "Python API wrapper for exaroton"
+authors = ["Colin <colin@colinshark.de>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/ColinShark/exaroton"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Natural Language :: English",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Internet",
+    "Topic :: Games/Entertainment",
+]
+include = ["README.md"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.28.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+rich = "^13.3.1"
+black = "^23.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
