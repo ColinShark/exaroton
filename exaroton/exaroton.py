@@ -6,7 +6,8 @@ from . import types
 
 
 class Exaroton:
-    """ Exaroton Class for the API """
+    """Exaroton Class for the API"""
+
     def __init__(self, token: str, host: str = "https://api.exaroton.com/v1") -> None:
         """
         Exaroton Class to interface with the API
@@ -35,7 +36,16 @@ class Exaroton:
         """
         req = self._session.request(method, f"{self._host}/{path}", **kwargs)
         # TODO Error Handling
-        return req.json()
+        content_type = req.headers["content-type"]
+
+        if content_type == "application/json":
+            return req.json()
+
+        elif content_type == "text/plain;charset=UTF-8":
+            return bytes.decode(req.content, "utf8")
+
+        elif content_type == "application/octet-stream":
+            return req.content
 
     def get_account(self) -> types.Account:
         """Get information about the authenticated Account
@@ -228,4 +238,24 @@ class Exaroton:
             "delete",
             json={"entries": usernames},
         )["data"]
+        return _data
+
+    def get_file_data(self, id: str, path: str):
+        """Retrieve file data based on a given path.
+
+        Args:
+            ``id`` (``str``): The ID of the server
+            ``path`` (``str``): The path to retrieve
+        """
+        _data = self._make_request(f"servers/{id}/files/data/{path}")
+        return _data
+
+    def write_file_data(self, id: str = None, path: str = None, data=None):
+        """Write content to a file. If it doesn't exist yet, it'll be created."""
+        # TODO implement
+        raise NotImplementedError("This method hasn't been implemented yet")
+        # _data = self._make_request(f"servers/{id}/files/data/{path}", "put")
+
+    def delete_file_data(self, id: str, path: str):
+        _data = self._make_request(f"servers/{id}/files/data/{path}", "delete")
         return _data
