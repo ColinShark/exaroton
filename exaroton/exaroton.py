@@ -47,6 +47,11 @@ class Exaroton:
         elif content_type == "application/octet-stream":
             return req.content
 
+        elif content_type == "image/png":
+            # In case returned data is an image (for example the server-icon.png)
+            # This type isn't actually documentated by the API Docs :thumbsup:
+            return req.content
+
     def get_account(self) -> types.Account:
         """Get information about the authenticated Account
 
