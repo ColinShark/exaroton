@@ -1,6 +1,6 @@
 # exaroton
 
-A Python Wrapper for the [exaroton API](https://developers.exaroton.com/)
+An unoffial Python Wrapper for the [exaroton API](https://developers.exaroton.com/)
 
 Simply get an API Token from [your Account](https://exaroton.com/account/) and you're good to go.
 
