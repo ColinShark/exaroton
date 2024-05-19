@@ -134,3 +134,25 @@ class Logs(ExarotonType):
         self.id = id
         self.url = url
         self.raw = raw
+
+class CreditPool(ExarotonType):
+    id: str
+    name: str
+    credits: float
+    servers: int
+    owner: str
+    isOwner: bool
+    members: int
+    ownShare: int
+    ownCredits: float
+
+    def __init__(self, id: str, name: str, credits: float, servers: int, owner: str, isOwner: bool, members: int, ownShare: int, ownCredits: float) -> None:
+        self.id = id
+        self.name = name
+        self.credits = credits
+        self.servers = servers
+        self.owner = owner
+        self.isOwner = isOwner
+        self.members = members
+        self.ownShare = ownShare
+        self.ownCredits = ownCredits
