@@ -264,3 +264,24 @@ class Exaroton:
     def delete_file_data(self, id: str, path: str):
         _data = self._make_request(f"servers/{id}/files/data/{path}", "delete")
         return _data
+
+    def get_credit_pools(self) -> types.List:
+        """Get the list of credit pools that the account is a member of
+
+        Returns:
+            ``types.List``: List of ``types.CreditPool`` objects
+        """
+        _data = self._make_request("billing/pools")["data"]
+        return types.List(types.CreditPool(**data) for data in _data)
+    
+    def get_credit_pool(self, id: str) -> types.CreditPool:
+        """Get a specific credit pool
+
+        Args:
+            ``id`` (``str``): The ID of the credit pool
+
+        Returns:
+            ``types.CreditPool``: The credit pool
+        """
+        _data = self._make_request(f"billing/pools/{id}")["data"]
+        return types.CreditPool(**_data)
