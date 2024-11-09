@@ -156,3 +156,17 @@ class CreditPool(ExarotonType):
         self.members = members
         self.ownShare = ownShare
         self.ownCredits = ownCredits
+
+class CreditPoolMember(ExarotonType):
+    account: str
+    name: str
+    share: float
+    credits: int
+    isOwner: bool
+
+    def __init__(self, account: str, name: str, share: float, credits: int, isOwner: bool):
+        self.account = account
+        self.name = name
+        self.share = share
+        self.credits = credits
+        self.isOwner = isOwner

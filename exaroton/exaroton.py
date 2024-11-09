@@ -285,3 +285,27 @@ class Exaroton:
         """
         _data = self._make_request(f"billing/pools/{id}")["data"]
         return types.CreditPool(**_data)
+
+    def get_credit_pool_members(self, id: str) -> types.List:
+        """Get members of a specified credit pool
+
+        Args:
+            ``id`` (``str``): The ID of the credit pool
+
+        Returns:
+            ``types.List``: A list of CreditPoolMember
+        """
+        _data = self._make_request(f"billing/pools/{id}/members")["data"]
+        return types.List(types.CreditPoolMember(**data) for data in _data)
+
+    def get_credit_pool_servers(self, id: str) -> types.List:
+        """Get servers of a specified credit pool
+
+        Args:
+            ``int``: (``str``): The ID of the credit pool
+
+        Returns:
+            ``types.list``: A list of types.Server
+        """
+        _data = self._make_request(f"billing/pools/{id}/servers")["data"]
+        return types.List(types.Server(**data) for data in _data)
