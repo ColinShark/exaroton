@@ -1,6 +1,7 @@
 """ Exaroton Class to interface with the API """
 
 import requests
+from typing import List
 
 from . import types
 
@@ -61,7 +62,7 @@ class Exaroton:
         _data = self._make_request("account")["data"]
         return types.Account(**_data)
 
-    def get_servers(self) -> types.List:
+    def get_servers(self) -> List[types.Server]:
         """Get a list of servers on your account
 
         Returns:
@@ -142,7 +143,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/start")
+        _data = self._make_request(f"servers/{id}/start", "post")
         return _data
 
     def stop(self, id: str) -> str:
@@ -154,7 +155,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/stop")
+        _data = self._make_request(f"servers/{id}/stop",  "post")
         return _data
 
     def restart(self, id: str) -> str:
@@ -166,7 +167,7 @@ class Exaroton:
         Returns:
             ``str``: "Hello, world!"
         """
-        _data = self._make_request(f"servers/{id}/restart")
+        _data = self._make_request(f"servers/{id}/restart", "post")
         return _data
 
     def command(self, id: str, command: str) -> str:
@@ -184,7 +185,7 @@ class Exaroton:
         )["data"]
         return _data
 
-    def get_player_lists(self, id: str) -> list:
+    def get_player_lists(self, id: str) -> List[str]:
         """Get a list of available playerlists
 
         Args:
@@ -196,7 +197,7 @@ class Exaroton:
         _data = self._make_request(f"servers/{id}/playerlists")["data"]
         return _data
 
-    def get_player_list(self, id: str, player_list: str) -> list:
+    def get_player_list(self, id: str, player_list: str) -> List[str]:
         """Get a specific playerlist
 
         Args:
@@ -209,7 +210,7 @@ class Exaroton:
         _data = self._make_request(f"servers/{id}/playerlists/{player_list}")["data"]
         return _data
 
-    def add_player_to_list(self, id: str, player_list: str, usernames: list) -> list:
+    def add_player_to_list(self, id: str, player_list: str, usernames: list) -> List[str]:
         """Add playernames to a playerlist
 
         Args:
@@ -227,7 +228,7 @@ class Exaroton:
         )["data"]
         return _data
 
-    def remove_player_from_list(self, id: str, player_list: str, usernames: list):
+    def remove_player_from_list(self, id: str, player_list: str, usernames: List[str]):
         """Remove players from a playerlist
 
         Args:
@@ -265,7 +266,7 @@ class Exaroton:
         _data = self._make_request(f"servers/{id}/files/data/{path}", "delete")
         return _data
 
-    def get_credit_pools(self) -> types.List:
+    def get_credit_pools(self) -> List[types.CreditPool]:
         """Get the list of credit pools that the account is a member of
 
         Returns:
@@ -286,7 +287,7 @@ class Exaroton:
         _data = self._make_request(f"billing/pools/{id}")["data"]
         return types.CreditPool(**_data)
 
-    def get_credit_pool_members(self, id: str) -> types.List:
+    def get_credit_pool_members(self, id: str) -> List[types.CreditPoolMember]:
         """Get members of a specified credit pool
 
         Args:
@@ -298,7 +299,7 @@ class Exaroton:
         _data = self._make_request(f"billing/pools/{id}/members")["data"]
         return types.List(types.CreditPoolMember(**data) for data in _data)
 
-    def get_credit_pool_servers(self, id: str) -> types.List:
+    def get_credit_pool_servers(self, id: str) -> List[types.Server]:
         """Get servers of a specified credit pool
 
         Args:
